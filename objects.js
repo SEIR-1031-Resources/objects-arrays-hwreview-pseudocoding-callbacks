@@ -34,15 +34,57 @@ const class404 = {
             role: "Honestly nobody's really sure",
             notes: "Loves Mondays in this class"
         }
-    ]
+    ],
+    students: [],
+    timeZone: "PST",
+    addStudent(name) {
+        return this.students.push(name);
+    },
+    printAllStudentsIndividually() {
+        this.students.forEach(student => {
+            console.log(student);
+        })
+    }
 }
 
-// console.log(class404.instructors[0].name)
+// console.log(class404);
+// class404.addStudent("Jeddy");
+// class404.addStudent("Braydon");
+// console.log(class404);
+// class404.printAllStudentsIndividually();
 
-class404.instructors.forEach(instructor => {
-    console.log(instructor)
-    console.log(`This cohort is fun for ${instructor.name}`)
-    if(instructor.role === "IA") {
-        console.log("This cohort loves " + instructor.name)
+
+// class404.instructors.forEach(instructor => {
+//     console.log(instructor)
+//     console.log(`This cohort is fun for ${instructor.name}`)
+//     if(instructor.role === "IA") {
+//         console.log("This cohort loves " + instructor.name)
+//     }
+// })
+
+// for(let key in class404) {
+//     console.log(`The key is ${key} with value of ${class404[key]}`)
+// }
+
+const batman = {
+    persona: "Batman",
+    identity: "Bruce Wayne",
+    health: 100,
+    power: 30,
+    money: 1000000000,
+    revealIdentity(){
+      console.log(`I'm ${this.persona}!`);
+    },
+  // out new method
+    takeDamage(amount){
+      return this.health = this.health - amount;
+    }, 
+    makesMoney(amount) {
+        return this.money = this.money + amount
     }
-})
+  }
+
+// console.log(batman);
+// batman.takeDamage(25);
+// batman.makesMoney(234567)
+// console.log(batman);
